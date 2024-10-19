@@ -1,0 +1,21 @@
+# fly.toml app configuration file generated for bbctl-sh-heisenbridge0 on 2024-10-10T12:23:13+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'bbctl-sh-heisenbridge0'
+primary_region = 'lhr'
+
+[env]
+DATA_DIR = "/data"
+
+[[restart]]
+policy = 'always'
+
+[[vm]]
+size = 'shared-cpu-1x'
+memory = "256mb"
+
+[mounts]
+source = "data"
+destination = "/data"
